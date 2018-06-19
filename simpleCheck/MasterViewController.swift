@@ -9,15 +9,17 @@
 import UIKit
 
 class MasterViewController: UITableViewController {
-
+    @IBOutlet weak var myView: UIView!
+    
     var detailViewController: DetailViewController? = nil
     var objects = [Any]()
-
+    var safeAreaLayoutGuide = UILayoutGuide()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // Do any additional setup after loading the view, typically from a nib.
-        navigationItem.leftBarButtonItem = editButtonItem
+        myView.backgroundColor = UIColor.orange; navigationItem.leftBarButtonItem = editButtonItem
 
         let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(insertNewObject(_:)))
         navigationItem.rightBarButtonItem = addButton
